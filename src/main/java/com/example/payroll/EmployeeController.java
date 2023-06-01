@@ -60,4 +60,17 @@ class EmployeeController {
     List<Employee> allName(@RequestParam String name) {
         return repository.findByName(name);
     }
+
+    @GetMapping("/employees/firstName")
+    List<Employee> allFirstName(@RequestParam String firstName) { return repository.findByFirstName(firstName); }
+
+    @GetMapping("/employees/lastName")
+    List<Employee> allLastName(@RequestParam String lastName) {
+        return repository.findByLastName(lastName);
+    }
+
+    @GetMapping("/employees/roleAndName")
+    List<Employee> allRoleAndName(@RequestParam String role, @RequestParam String name) {
+        return repository.findUserByRoleAndName(role, name);
+    }
 }
